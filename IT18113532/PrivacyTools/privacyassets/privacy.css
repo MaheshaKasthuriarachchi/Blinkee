@@ -1,0 +1,127 @@
+html,
+body {
+  height: 100%;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+body {
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-align: center;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  padding-top: -100px;
+  padding-bottom: 220px;
+  overflow: hidden;
+  background:linear-gradient(rgba(0, 0, 0, 0),rgb(41, 39, 39));
+}
+
+.form-privacy {
+  width: 50%;
+  max-width: 600px;
+  padding: 15px;
+  align-items: center;
+  border: 1px solid #fffffe;
+  background-color: whitesmoke;
+  text-align: center;
+  border-radius: 5px;
+  position: absolute;
+}
+
+.alert{
+  margin-top: 620px;
+}
+
+.alert-heading{
+  text-align: center;
+}
+
+.form-privacy .form-control {
+  box-sizing: border-box;
+  height: auto;
+  
+  padding: 1px;
+  font-size: 16px;
+  color: rgb(67, 74, 82);
+  margin-left: 15px;
+
+}
+.form-privacy .form-control:focus {
+  z-index: 2;
+}
+.form-privacy input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  font-size: 14px;
+}
+.text{
+    margin-left: 5px;
+    font-weight: lighter;
+    font-size: 15px;
+    text-align: center;
+    color: rgb(77, 85, 94);
+    
+}
+.header{
+   margin-bottom: 70px; 
+}
+
+.heading{
+  align-items: center;
+  font-weight: bold;
+  margin-top: -1px;
+}
+.btn{
+  background:linear-gradient(to right, #ff105f, #ffad06);
+  font-weight: bold;
+  margin-top: 20px;
+  padding: 10px;
+  margin-bottom: -20px;
+}
+.btn:hover{
+  background: darkorange;
+}
+.alert{
+  display: none;
+}
+.selection{
+  float: left;
+  text-align: left;
+  margin-top: 20px;
+  line-height: 30px;
+  margin-bottom: 7px;
+  cursor: pointer;
+}
+.selection .checkmark{
+  cursor: pointer;
+}
+.glyphicon-plus-sign{
+  margin-left: 10PX;
+  cursor: pointer;
+  font-size: 20px;
+  margin-top: 10px;
+  color: dodgerblue;
+}
+#list{
+  float: left;
+  font-size: 14px;
+  font-weight: bold;
+}
+p{
+  font-size: 15px;
+  text-align: center;
+  font-weight: lighter;
+}
+.alert-heading{
+  font-weight: bolder;
+}
+#add:hover{
+color: lightskyblue;
+}
+ 
+

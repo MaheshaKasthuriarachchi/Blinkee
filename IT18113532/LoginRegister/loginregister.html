@@ -1,0 +1,134 @@
+<html>
+
+<head>
+    <title>Login And Registration</title>
+    <link rel="icon" href="loginAssests/image.jpg" type="image/jpg">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="loginregistercss/loginregister.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="hero">
+        <div class="form-box">
+            <div class="button-box">
+                <div id="btn"></div>
+                <button type="button" class="toggle-btn" onclick="login()">Log In</button>
+                <button type="button" class="toggle-btn" onclick="register()">Register</button>
+            </div>
+            <div class="social-icons" id="social">
+                <a href="https://www.facebook.com" onclick="sound()">
+                    <img src="loginAssests/fb.png" id="fb"></a>
+                <a href="https://accounts.google.com/" onclick="sound()">
+                    <img src="loginAssests/gp.png" id="gg"></a>
+                <a href="https://twitter.com/login?lang=en" onclick="sound()">
+                    <img src="loginAssests/tw.png" id="twt"></a>
+            </div>
+            <div id="error_message">
+            </div>
+        
+            <form id="login" class="input-group" onsubmit="return loginValidation()">
+               
+   
+                <input type="text" class="form__field" placeholder="Username (or email)" id="email1"><label for="email1" class="form__label">Username (or Email)</label><br>
+                <input type="password" class="form__field2" placeholder="Password" id="password1"><label for="password1" class="form__label2">Password</label>
+                <span><i class="fas fa-eye" aria-hidden="true" id="eye1" onclick="toggle1()" style="margin-top: -10px;"></i></span>
+                <input type="checkbox" class="check-box"><label for="checkbox">Keep Me Logged In</label>
+                <audio id="audio" src="loginAssests/sound.mp3" autoplay="false" ></audio>
+                <audio id="audio2" src="loginAssests/mouseclick.mp3" autoplay="false" ></audio>
+                <audio id="audio3" src="loginAssests/shoplist.mp3" autoplay="false" ></audio>
+                <button type="submit" class="login-btn">Log In</button><br>
+                <a href="#" id="resetBtn" class="reset-btn" style="text-decoration: none;">Trouble with Login</a>
+            </form>
+            <form id="register" class="input-group">
+                <input type="text" class="form__field3" placeholder="Username" id="yourName"><label for="yourName" class="form__label3">Your Name</label>
+                <input type="email" class="form__field4" placeholder="Email" id="email2"><label for="email2" class="form__label4">Email</label>
+                <input type="password" class="form__field5" placeholder="Password" id="password2"><label for="password2" class="form__label5">Password</label>
+                <span class="span2"><i class="fas fa-eye" aria-hidden="true" id="eye2" onclick="toggle2()"></i></span>
+                <input type="password" class="form__field6" placeholder="Re-enter Password" id="password3"><label for="password3" class="form__label6">Re-enter Password</label><br>
+                <span class="span3"><i class="fas fa-eye" aria-hidden="true" id="eye3" onclick="toggle3()"></i></span>
+                <input type="checkbox" class="check-box" id="checkbox1" required><label for="checkbox" >I agree to all terms and
+                    conditions</label>
+                <button type="submit" class="register-btn" onclick="return registerValidation()">Register</button>
+            </form>
+        </div>
+    </div>
+    <div class="animation-area">
+        <ul class="box-area">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <div class="bg-modal">
+        <div class="modal-content"><br>
+            <h1><strong>Login Assistance</strong></h1><br>
+            <p>Please enter the Blinkee account associated email address to receive the
+                password reset link.
+            </p>
+            <form action="" id="resetLinkForm">
+                <input type="email" id="email" placeholder="Email Address" required
+                >
+                <button type="submit" class="button1"> Send Reset Link</button>
+                <button class="button2"> Cancel</button>
+            </form>
+        </div>
+    </div>
+    <div class="alert_wrapper">
+        <div class="alert_backdrop"></div>
+        <div class="alert_inner">
+            <div class="alert_item alert_success">
+                <div class="data">
+                    <strong class="title" style="margin-left: 20%;">Successfully Logged In!</strong>
+                    <hr>
+                    <p class="mb-0">Please wait a moment till we configure account dashboard</p>
+                </div>
+                <span class="icon-close1">
+                    <span class="fas fa-times"></span>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="alert_wrapper2">
+        <div class="alert_backdrop2"></div>
+        <div class="alert_inner2">
+            <div class="alert_item2 alert_success">
+                <div class="data2">
+                    <strong class="title2" style="margin-left: 2%;">Thank You For Registering To Blinkee!</strong>
+                    <hr>
+                    <p class="mb-0">Please wait a moment till we configure account dashboard</p>
+                </div>
+                <span class="icon-close2">
+                    <span class="fas fa-times"></span>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="alert_wrapper3">
+        <div class="alert_backdrop3"></div>
+        <div class="alert_inner3">
+            <div class="alert_item3 alert_success">
+                <div class="data3">
+                    <strong class="title3" style="margin-left: 8%;">Password Rest Link Has Been Sent!</strong>
+                    <hr>
+                    <p class="mb-0">Please Check Your Email Inbox And Proceed With The Instructions</p>
+                </div>
+                <span class="icon-close3">
+                    <span class="fas fa-times"></span>
+                </span>
+            </div>
+        </div>
+    </div>
+    <script src="loginregisterjs/loginregister.js">
+    </script>
+</body>
+
+</html>

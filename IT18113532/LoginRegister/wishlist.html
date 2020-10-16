@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Account Wishlist</title>
+    <link rel="icon" href="loginAssests/image.jpg" type="image/jpg">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+    <link rel="stylesheet" href="loginregistercss/dashboard.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <audio id="audio2" src="loginAssests/mouseclick.mp3" autoplay="false"></audio>
+    <audio id="audio3" src="loginAssests/wishlist.mp3" autoplay="false"></audio>
+    <div class="wrapper">
+        <nav class="sidebar show">
+            <div class="text">
+                <div class="wrapper2" style="margin-top: 4%; margin-bottom: 4%; margin-left: 4%; margin-right: 4%;">
+                    <div class="box">
+                        <div class="js--image-preview">
+                            <img id="js--image-preview" />
+                        </div>
+
+
+                        <div class="upload-options">
+                            <label><i class="fas fa-add mr-2"></i>
+                                <input type="file" class="image-upload" accept="image/*" />
+                            </label>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <br>
+            <ul id="myTab2" style="margin-top: 90px;">
+                <li class="dashboard"><a href="dashboard.html" style="text-decoration: none;"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                </li>
+
+                <li class="wish"><a href="#wish" aria-controls="wish" aria-selected="falses" style="text-decoration: none;"><i
+                            class="fa fa-fw fa-heart"></i> Wishlist</a></li>
+
+                <li><a href="orders.html" style="text-decoration: none;"><i class="fa fa-fw fa-shopping-cart"></i> Orders</a></li>
+
+                <li><a href="shoplist.html" style="text-decoration: none;"><i class="fa fa-fw fa-list"></i> Shoplist</a></li>
+
+                <li><a href="buyingcalendar.html" style="text-decoration: none;"><i class="fa fa-fw fa-calendar"></i> Planner</a></li>
+
+                <li><a style="color: white;" id="logout" onclick="logout()" style="text-decoration: none;"><i class="fa fa-fw fa-sign-out"></i>
+                        Logout</a></li>
+            </ul>
+            <div class="btn1 click waves-effect">
+                <span class="fas fa-bars"></span>
+            </div>
+        </nav><br><br>
+        <div id="content">
+            <div class="sticky">
+                <section class="jumbotron text-center">
+                    <div class="container">
+                        <h1 class="jumbotron-heading">MY WISHLIST</h1>
+                    </div>
+                </section>
+            </div>
+            <div class="alert alert-primary alert1 hide">
+                <div class="fas fa-shopping-cart" style="font-size:20px; margin-left: 30%;"></div>
+                <strong> Added To Shopping Cart</strong>
+            </div>
+            <div class="container" style="margin-left: 0px;">
+                <div class="row">
+
+                    <div class="col">
+                        <div class="row">
+                            <div class="col-12 col-md-6 col-lg-4" style="margin-bottom: 35px;" id="num1">
+                                <div class="card" style="width: 100%; height: 100%;">
+                                    <img class="card-img-top" src="loginAssests/candle.jpeg" alt="Card image cap"
+                                        style="height: 200px;">
+                                    <div class="card-body">
+                                        <h4 class="card-title"><a href="product.html" title="View Product">LED Multiple
+                                                Wax
+                                                Candles</a></h4>
+                                        <p class="card-text">Long Lasting LED multiple candle lights with the realistic
+                                            feel of
+                                            wax embroided, will light up your room magically.</p>
+                                        <div class="row" style="height: 100px; width: 400px;">
+                                            <div class="text-left">
+                                                <p class="btn" style="color: black; pointer-events: none;">$ 3.50</p>
+                                            </div>
+                                            <div class="col">
+                                                <button class="btn btn-outline-success btn-rounded waves-effect"
+                                                    onclick="button1()" style="margin-left: 0%;padding: 8px 6px">Add to
+                                                    cart</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4" style="margin-bottom: 35px;" id="num2">
+                                <div class="card" style="width: 100%; height: 100%;">
+                                    <img class="card-img-top" src="loginAssests/discoBall.jpg" alt="Card image cap"
+                                        style="height: 200px;">
+                                    <div class="card-body">
+                                        <h4 class="card-title"><a href="product.html" title="View Product"> Party Silver
+                                                Disco
+                                                Ball</a></h4>
+                                        <p class="card-text">Silver disco party ball having the necessary components to
+                                            function in order to light up your party.</p>
+                                        <div class="row" style="height: 100px; width: 400px;">
+                                            <div class="text-left">
+                                                <p class="btn" style="color: black;  pointer-events: none;">$ 16</p>
+                                            </div>
+                                            <div class="col">
+                                                <button class="btn btn-outline-success btn-rounded waves-effect"
+                                                    onclick="button2()" style="margin-left: 4%;padding: 8px 6px">Add to
+                                                    cart</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4" style="margin-bottom: 35px;" id="num3">
+                                <div class="card" style="width: 100%; height: 100%;">
+                                    <img class="card-img-top" src="loginAssests/goldLight.jpg" alt="Card image cap"
+                                        style="height: 200px;">
+                                    <div class="card-body">
+                                        <h4 class="card-title"><a href="product.html" title="View Product">Gold LED
+                                                Light Wire</a></h4>
+                                        <p class="card-text">The elegent 10m LED gold light wire covered with a
+                                            transparent rubber for decorations.</p>
+                                        <div class="row" style="height: 100px; width: 400px;">
+                                            <div class="text-left">
+                                                <p class="btn" style="color: black;  pointer-events: none;">$ 17.30</p>
+                                            </div>
+                                            <div class="col">
+                                                <button class="btn btn-outline-success btn-rounded waves-effect"
+                                                    onclick="button3()" style="margin-left: -3%;padding: 8px 6px">Add to
+                                                    cart</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><br>
+                            <div class="col-12 col-md-6 col-lg-4" style="margin-bottom: 35px;" id="num4">
+                                <div class="card" style="width: 100%; height: 100%;">
+                                    <img class="card-img-top" src="loginAssests/hatLED.jpg" alt="Card image cap"
+                                        style="height: 200px;">
+                                    <div class="card-body">
+                                        <h4 class="card-title"><a href="product.html" title="View Product">Fancy Hat</a>
+                                        </h4>
+                                        <p class="card-text">Fancy glittery hats in various colors to match eventful
+                                            costumes when going for functions.</p>
+                                        <div class="row" style="height: 100px; width: 400px;">
+                                            <div class="text-left">
+                                                <p class="btn" style="color: black;  pointer-events: none;">$ 7.40 </p>
+                                            </div>
+                                            <div class="col">
+                                                <button class="btn btn-outline-success btn-rounded waves-effect"
+                                                    onclick="button4()" style="margin-left: 0%;padding: 8px 6px">Add to
+                                                    cart</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4" style="margin-bottom: 35px;" id="num5">
+                                <div class="card" style="width: 100%; height: 100%;">
+                                    <img class="card-img-top" src="loginAssests/heartNeck.jpg" alt="Card image cap"
+                                        style="height: 200px;">
+                                    <div class="card-body">
+                                        <h4 class="card-title"><a href="product.html" title="View Product">Rainbow Heart
+                                                Necklace</a></h4>
+                                        <p class="card-text">Cute and pretty rainbow heart necklace for regular outings,
+                                            parties and functions.
+                                        </p>
+                                        <div class="row" style="height: 100px; width: 400px;">
+                                            <div class="text-left">
+                                                <p class="btn" style="color: black;  pointer-events: none;">$ 18</p>
+                                            </div>
+                                            <div class="col">
+                                                <button class="btn btn-outline-success btn-rounded waves-effect"
+                                                    onclick="button5()" style="margin-left: 4%;padding: 8px 6px">Add to
+                                                    cart</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4" style="margin-bottom: 35px;" id="num6">
+                                <div class="card" style="width: 100%; height: 100%;">
+                                    <img class="card-img-top" src="loginAssests/pompom.jpg" alt="Card image cap"
+                                        style="height:200px;">
+                                    <div class="card-body">
+                                        <h4 class="card-title"><a href="product.html" title="View Product">Pink Pom
+                                                Pom</a></h4>
+                                        <p class="card-text">Pink sparkly pom pom stick with a stiff holding for
+                                            cheerings and celebrations, specially for high school kids.</p>
+                                        <div class="row" style="height: 100px; width: 400px;">
+                                            <div class="text-left">
+                                                <p class="btn" style="color: black; pointer-events: none;">$ 7.20</p>
+                                            </div>
+                                            <div class="col">
+                                                <button class="btn btn-outline-success btn-rounded waves-effect"
+                                                    onclick="button6()" style="margin-left: 0%;padding: 8px 6px">Add to
+                                                    cart</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <nav>
+                <ul class="pagination pagination-lg" style="padding-left: 23%;">
+                    <li><a href="#" style="border-left-color: transparent;"><span class="page">
+                            </span></a></li>
+                    <li class="active"><a href="#" style="border-left-color: transparent;"><span
+                                class="page">1</span></a></li>
+                    <li><a href="#" style="border-left-color: transparent;"> <span class="page">2</span></a></li>
+                    <li><a href="#" style="border-left-color: transparent;"><span class="page">3</span></a></li>
+                    <li><a href="#" style="border-left-color: transparent;"><span class="page">4</span></a></li>
+                    <li><a href="#" style="border-left-color: transparent;"><span class="page">5</span></a></li>
+                    <li><a href="#" style="border-left-color: transparent;"><span class="page">>></span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <audio id="audio5" src="loginAssests/logout.mp3" autoplay="false"></audio>
+    <script>
+        function logout() {
+            swal({
+                title: "Are you sure you want to logout?",
+                text: "It is better to be logged in and shop!",
+                icon: "warning",
+                buttons: ["No", "Yes, I'm Sure"],
+                dangerMode: true,
+            })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        var sound6 = document.getElementById("audio5");
+                        sound6.playbackRate = 3;
+                        sound6.play();
+                        swal("You have logged out successfully", {
+                            icon: "success",
+                        });
+                        setTimeout(function () {
+                            window.location.replace("loginregister.html");
+                        }, 2000);
+                    } else {
+                        window.location.replace("dashboard.html");
+                    }
+                });
+        }
+        $('nav ul li').click(function () {
+            $(this).addClass("active").siblings().removeClass("active");
+        });
+        $('.btn1').click(function () {
+            $(this).toggleClass("click");
+            $('.sidebar').toggleClass("show");
+            $('.wish').addClass("active");
+
+        });
+
+        $(document).ready(function () {
+            $('.wish').addClass("active");
+            $('.pass_show').append('<span class="ptxt">Show</span>');
+
+
+            $(document).on('change', '.image-upload :file', function () {
+                var input = $(this),
+                    label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+                input.trigger('fileselect', [label]);
+            });
+
+            $('.image-upload :file').on('fileselect', function (event, label) {
+
+                var input = $(this).parents('.upload-options').find(':text'),
+                    log = label;
+
+            });
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $('#js--image-preview').attr('src', e.target.result);
+                    }
+
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+
+            $(".image-upload").change(function () {
+                readURL(this);
+            });
+
+        });
+
+        $(document).on('click', '.pass_show .ptxt', function () {
+            $(this).text($(this).text() == "Show" ? "Hide" : "Show");
+            $(this).prev().attr('type', function (index, attr) { return attr == 'password' ? 'text' : 'password'; });
+        });
+
+
+        function button1() {
+            var sound2 = document.getElementById("audio3");
+            sound2.playbackRate = 3;
+            sound2.play();
+            $('#num1').css('display', 'none');
+            $(".alert1").fadeIn();
+            setTimeout(function () {
+                $(".alert1").fadeOut("slow");
+            }, 1500);
+        }
+        function button2() {
+            var sound2 = document.getElementById("audio3");
+            sound2.playbackRate = 3;
+            sound2.play();
+            $('#num2').css('display', 'none');
+            $(".alert1").fadeIn();
+            setTimeout(function () {
+                $(".alert1").fadeOut("slow");
+            }, 1500);
+        }
+        function button3() {
+            var sound2 = document.getElementById("audio3");
+            sound2.playbackRate = 3;
+            sound2.play();
+            $('#num3').css('display', 'none');
+            $(".alert1").fadeIn();
+            setTimeout(function () {
+                $(".alert1").fadeOut("slow");
+            }, 1500);
+        }
+        function button4() {
+            var sound2 = document.getElementById("audio3");
+            sound2.playbackRate = 3;
+            sound2.play();
+            $('#num4').css('display', 'none');
+            $(".alert1").fadeIn();
+            setTimeout(function () {
+                $(".alert1").fadeOut("slow");
+            }, 1500);
+        }
+        function button5() {
+            var sound2 = document.getElementById("audio3");
+            sound2.playbackRate = 3;
+            sound2.play();
+            $('#num5').css('display', 'none');
+            $(".alert1").fadeIn();
+            setTimeout(function () {
+                $(".alert1").fadeOut("slow");
+            }, 1500);
+        }
+        function button6() {
+            var sound2 = document.getElementById("audio3");
+            sound2.playbackRate = 3;
+            sound2.play();
+            $('#num6').css('display', 'none');
+            $(".alert1").fadeIn();
+            setTimeout(function () {
+                $(".alert1").fadeOut("slow");
+            }, 1500);
+        }
+    </script>
+</body>
+
+</html>

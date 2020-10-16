@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Account Shoplist</title>
+    <link rel="icon" href="loginAssests/image.jpg" type="image/jpg">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+    <link rel="stylesheet" href="loginregistercss/shoplist.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <nav class="sidebar show">
+            <div class="text">
+                <div class="wrapper2" style="margin-top: 4%; margin-bottom: 4%; margin-left: 4%; margin-right: 4%;">
+                    <div class="box">
+                        <div class="js--image-preview">
+                            <img id="js--image-preview" />
+                        </div>
+
+
+                        <div class="upload-options">
+                            <label><i class="fas fa-add mr-2"></i>
+                                <input type="file" class="image-upload" accept="image/*" />
+                            </label>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <br>
+            <ul id="myTab2" style="margin-top: 90px;">
+                <li class="dashboard"><a href="dashboard.html" style="text-decoration: none;"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                </li>
+
+                <li class="wish"><a href="wishlist.html" style="text-decoration: none;"><i class="fa fa-fw fa-heart"></i> Wishlist</a></li>
+
+                <li class="orders"><a href="orders.html" style="text-decoration: none;"><i class="fa fa-fw fa-shopping-cart"></i> Orders</a></li>
+
+                <li class="shoplist"><a href="#shoplist" aria-controls="shoplist" aria-selected="false" style="text-decoration: none;"><i
+                            class="fa fa-fw fa-list"></i> Shoplist</a></li>
+                <li><a href="buyingcalendar.html" style="text-decoration: none;"><i class="fa fa-fw fa-calendar"></i> Planner</a></li>
+
+                <li><a style="color: white;" id="logout" onclick="logout()" style="text-decoration: none;"><i class="fa fa-fw fa-sign-out"></i>
+                        Logout</a></li>
+            </ul>
+            <div class="btn1 click waves-effect">
+                <span class="fas fa-bars"></span>
+            </div>
+        </nav><br><br>
+        <div id="content">
+            <div class="sticky">
+                <section class="jumbotron text-center">
+                    <div class="container">
+                        <h1 class="jumbotron-heading">MY SHOPLIST</h1>
+                    </div>
+                </section>
+            </div>
+            <div class="container">
+
+                <div class="row" style="margin-left: -4%;">
+                    <div class="col">
+                        <div class="form-group col-md-12 orange-border-focus">
+                            <input type="text" class="form-control" id="candidate"
+                                style="border-width: 1px; border-radius: 15px;" placeholder="Hmmm.. What to buy...">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div style="margin-left: 75%;">
+                            <button id="btnAddtoList" type="submit" btnAddtoList" class="btn aqua-gradient"
+                                style="margin-top: 0%; margin-left: -12%;">add item</button>
+                        </div>
+                    </div>
+                </div><br>
+
+
+                <div class="panel-body">
+                    <ul class="dynamic-list">
+                        <li class="list-group-item" id="mylist">
+                            <div class="checkbox"><input type="checkbox" id="checkbox"
+                                    name="choice_shrd_with_me" /><label for="checkbox"> &nbsp; &nbsp;Halloween Dress,having a glamour touch to it</label>
+                            </div>
+                            <div class="pull-right"><a href="#" class="pencil" data-toggle="tooltip"
+                                    data-placement="top" title="Edit"><span class="fa fa-pencil"
+                                        onclick="editItem()"></span></a>&nbsp;&nbsp;&nbsp;<a href="#" class="trash"
+                                    data-toggle="tooltip" data-placement="top" title="Delete"><span class="fa fa-trash"
+                                        onclick="deleteItem()"></span></a></div>
+                        </li>
+                        <li class="list-group-item" id="mylist">
+                            <div class="checkbox"><input type="checkbox" id="checkbox"
+                                    name="choice_shrd_with_me" /><label for="checkbox"> &nbsp; &nbsp;Party costume mostly covered in pink feathers</label></div>
+                            <div class="pull-right"><a href="#" class="pencil" data-toggle="tooltip"
+                                    data-placement="top" title="Edit"><span class="fa fa-pencil"
+                                        onclick="editItem()"></span></a>&nbsp;&nbsp;&nbsp;<a href="#" class="trash"
+                                    data-toggle="tooltip" data-placement="top" title="Delete"><span class="fa fa-trash"
+                                        onclick="deleteItem()"></span></a></div>
+                        </li>
+                        <li class="list-group-item" id="mylist">
+                            <div class="checkbox"><input type="checkbox" id="checkbox"
+                                    name="choice_shrd_with_me" /><label for="checkbox"> &nbsp; &nbsp;Moon LED night lamp, rechargable</label></div>
+                            <div class="pull-right"><a href="#" class="pencil" data-toggle="tooltip"
+                                    data-placement="top" title="Edit"><span class="fa fa-pencil"
+                                        onclick="editItem()"></span></a>&nbsp;&nbsp;&nbsp;<a href="#" class="trash"
+                                    data-toggle="tooltip" data-placement="top" title="Delete"><span class="fa fa-trash"
+                                        onclick="deleteItem()"></span></a></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <audio id="audio2" src="loginAssests/mouseclick.mp3" autoplay="false"></audio>
+        <audio id="audio4" src="loginAssests/shoplist.mp3" autoplay="false"></audio>
+        <audio id="audio3" src="loginAssests/trash.mp3" autoplay="false"></audio>
+        <audio id="audio5" src="loginAssests/logout.mp3" autoplay="false"></audio>
+        <script>
+
+            $(function () {
+                $('#btnAddtoList').click(function () {
+                    var candidate = document.getElementById("candidate").value;
+                    if (candidate.length > 0) {
+                    var sound5 = document.getElementById("audio2");
+                    sound5.playbackRate = 3;
+                    sound5.play();
+                        var newDiv = $('<li class="list-group-item" id="mylist"><div class="checkbox"><input type="checkbox" id="checkbox" name="choice_shrd_with_me"/><label for="checkbox"> &nbsp; &nbsp;' + candidate + '</label></div> <div class="pull-right"><a href="#" class="pencil" data-toggle="tooltip" data-placement="top" title="Edit"><span class="fa fa-pencil" onclick="editItem()"></span></a>&nbsp;&nbsp;&nbsp;<a href="#" class="trash" data-toggle="tooltip" data-placement="top" title="Delete"><span class="fa fa-trash" onclick="deleteItem()"></span></a></div></li>');
+                        //newDiv.style.background = "#000";
+                        $('.dynamic-list').append(newDiv);
+                        document.getElementById("candidate").value = '';
+                    }
+                    else {
+                    var sound2 = document.getElementById("audio4");
+                    sound2.playbackRate = 3;
+                    sound2.play();
+                        swal("Sorry!", "Please enter an item first!", "error");
+                    }
+                });
+            });
+
+            function deleteItem() {
+                const trashs = [...document.querySelectorAll('.list-group-item .fa-trash')];
+
+                for (const tra of trashs) {
+                    tra.addEventListener('click', function () {
+                        var sound2 = document.getElementById("audio3");
+                        sound2.playbackRate = 3;
+                        sound2.play();
+                        $(this).parents("li").eq(0).remove();
+                    })
+                }
+            }
+            function editItem() {
+                const pencils = [...document.querySelectorAll('.list-group-item .fa-pencil')];
+
+                for (const penci of pencils) {
+                    penci.addEventListener('click', function () {
+                        $('#candidate').val('');
+                        $('#candidate').val($(this).parents("div").eq(0).siblings("div").eq(0).children("label").eq(0).text().trim());
+                        $(this).parents("li").eq(0).remove();
+                    })
+                }
+            }
+
+            function logout() {
+                swal({
+                    title: "Are you sure you want to logout?",
+                    text: "It is better to be logged in and shop!",
+                    icon: "warning",
+                    buttons: ["No", "Yes, I'm Sure"],
+                    dangerMode: true,
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            var sound6 = document.getElementById("audio5");
+                            sound6.playbackRate = 3;
+                            sound6.play();
+                            swal("You have logged out successfully", {
+                                icon: "success",
+                            });
+                            setTimeout(function () {
+                                window.location.replace("loginregister.html");
+                            }, 2000);
+                        } else {
+                            window.location.replace("dashboard.html");
+                        }
+                    });
+            }
+            $('nav ul li').click(function () {
+                $(this).addClass("active").siblings().removeClass("active");
+            });
+            $('.btn1').click(function () {
+                $(this).toggleClass("click");
+                $('.sidebar').toggleClass("show");
+                $('.shoplist').addClass("active");
+
+            });
+
+            $(document).ready(function () {
+                $('.shoplist').addClass("active");
+                $('.pass_show').append('<span class="ptxt">Show</span>');
+
+
+                $(document).on('change', '.image-upload :file', function () {
+                    var input = $(this),
+                        label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+                    input.trigger('fileselect', [label]);
+                });
+
+                $('.image-upload :file').on('fileselect', function (event, label) {
+
+                    var input = $(this).parents('.upload-options').find(':text'),
+                        log = label;
+
+                });
+                function readURL(input) {
+                    if (input.files && input.files[0]) {
+                        var reader = new FileReader();
+
+                        reader.onload = function (e) {
+                            $('#js--image-preview').attr('src', e.target.result);
+                        }
+
+                        reader.readAsDataURL(input.files[0]);
+                    }
+                }
+
+                $(".image-upload").change(function () {
+                    readURL(this);
+                });
+
+            });
+        </script>
+
+</body>
+
+</html>

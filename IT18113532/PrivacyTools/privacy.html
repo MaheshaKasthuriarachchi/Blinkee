@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Privacy Tools</title>
+    <link rel="icon" href="privacyassets/image.jpg" type="image/jpg">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    <link href="privacyassets/privacy.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="form-privacy">
+        <h2 class="heading">Receive Personal Information</h2>
+        <p class="text">Please Select A Preferred Email Address Or Add More If Necessary</p>
+        <form class="form-inline">
+            <div class="selection">
+                <label class="container">
+                    <input type="checkbox" id="check1">
+                    <span class="checkmark">anne123@gmail.com</span>
+                </label>
+                <label class="container">
+                    <input type="checkbox" id="check2">
+                    <span class="checkmark">anne321@gmail.com</span>
+                </label>
+                <label class="container">
+                    <form>
+                        <input type="email" id="email1" class="form-control form-control-sm" placeholder="Add Email"
+                            required autofocus>
+                        <span class="glyphicon glyphicon-plus-sign" id="add" type="submit" onclick="emailTest()"></span>
+                    </form>
+                </label>
+            </div>
+        </form>
+        <ul id="list"></ul>
+        <button class="btn btn-lgsss btn-block" type="submit" id="sendBtn" disabled>SEND INFORMATION</button><br>
+    </div>
+    <div class="alert alert-info alert-dismissible">
+        <span>
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        </span>
+        <h4 class="alert-heading">Sent!&#128522;</h4>
+        <p>A link to view private information saved in your Blinkee account was sent to all specified email inboxes.
+            Please check your email spam folder as well.
+        </p>
+        <hr>
+        <p class="mb-0">Note that the link will only be valid<strong> for 15 minutes.</strong> </p>
+    </div>
+    <audio id="audio2" src="privacyassets/mouseclick.mp3" autoplay="false"></audio>
+    <script>
+
+        $(".close").click(function () {
+            location.reload();
+        });
+
+        $('#check1').change(function () {
+            $('#sendBtn').prop("disabled", !this.checked);
+        }).change()
+
+        $('#check2').change(function () {
+            $('#sendBtn').prop("disabled", !this.checked);
+        }).change()
+
+        $("#sendBtn").click(function () {
+            var sound2 = document.getElementById("audio2");
+            sound2.playbackRate = 3;
+            sound2.play();
+            $('.alert').toggleClass("show");
+
+
+        });
+
+        function emailTest() {
+            var email = document.getElementById("email1").value;
+            const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            if (!re.test(email)) {
+                alert("Invalid Email Entered!");
+            }
+            else {
+                var listContainer = document.getElementById("list");
+                event.preventDefault();
+                inputValue = email;
+                listContainer.prepend(inputValue + ', ');
+                document.getElementById("email1").value = "";
+                document.getElementById("sendBtn").disabled = false;
+
+            }
+        }
+
+    </script>
+</body>
+
+</html>

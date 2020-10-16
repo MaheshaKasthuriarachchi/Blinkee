@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Account Orders</title>
+    <link rel="icon" href="loginAssests/image.jpg" type="image/jpg">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+    <link rel="stylesheet" href="loginregistercss/orders.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <!-- The Modal -->
+    <div id="myModal1" class="modal">
+        <div class="modal-content">
+            <div class="row shop-tracking-status">
+                <div class="col-md-12">
+                    <div class="well">
+                        <span class="close1"
+                            style="cursor: pointer; margin-left: 777px; font-size: 30px; margin-top: -20px;"></span>
+                        <img src="loginAssests/Green_glowstick.jpg" style="height: 300px; width: 300px; float: left;" />
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <span class="prefix">Reference No</span>
+                                <span class="badge badge-success">1243</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="prefix">Product Name</span>
+                                <span class="badge badge-success">Fluorescent Green Band</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="prefix">Ordered Date</span>
+                                <span class="badge badge-success">28.09.2020</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="prefix">Delivered Date</span>
+                                <span class="badge badge-success">Unknown</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="prefix">Expected Delivery Date</span>
+                                <span class="badge badge-success">10.11.2020</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="prefix">Quantity</span>
+                                <span class="badge badge-success">5</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="prefix">Price</span>
+                                <span class="badge badge-success">$ 12.50</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="prefix">Payment Method</span>
+                                <span class="badge badge-success">Credit Card</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="prefix">Main Transportation</span>
+                                <span class="badge badge-success">By Ship</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="prefix">Origin Country</span>
+                                <img src="loginAssests/th.svg" style="height: 30px; padding-right: 10px;" /><span
+                                    class="badge badge-success">Thailand</span>
+                            </li>
+                        </ul>
+                        <br><br><br><br>
+                        <div class="order-status">
+
+                            <div class="order-status-timeline">
+                                <!-- class names: c0 c1 c2 c3 and c4 -->
+                                <div class="order-status-timeline-completion c1"></div>
+                            </div>
+                            <div class="image-order-status image-order-status-new active img-circle">
+                                <span class="status">Accepted</span>
+                                <div class="icon"></div>
+                            </div>
+                            <div class="image-order-status image-order-status-active active img-circle">
+                                <span class="status">In progress</span>
+                                <div class="icon"></div>
+                            </div>
+                            <div class="image-order-status image-order-status-intransit active img-circle">
+                                <span class="status">Shipped</span>
+                                <div class="icon"></div>
+                            </div>
+                            <div class="image-order-status image-order-status-delivered active img-circle">
+                                <span class="status">Delivered</span>
+                                <div class="icon"></div>
+                            </div>
+                            <div class="image-order-status image-order-status-completed active img-circle">
+                                <span class="status">Completed</span>
+                                <div class="icon"></div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div id="myModal2" class="modal">
+        <div class="modal-content">
+            <div class="row shop-tracking-status">
+                <div class="col-md-12">
+                    <div class="well">
+                        <span class="close2"
+                            style="cursor: pointer;  margin-left: 777px; font-size: 30px; margin-top: -20px;"></span>
+                        <img src="loginAssests/fairy.jpg" style="height: 300px; width: 300px;float: left;" />
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <span class="prefix">Reference No</span>
+                                <span class="badge badge-success">3464</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="prefix">Product Name</span>
+                                <span class="badge badge-success">Fairy Crown</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="prefix">Ordered Date</span>
+                                <span class="badge badge-success">15.09.2020</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="prefix">Delivered Date</span>
+                                <span class="badge badge-success">Unknown</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="prefix">Expected Delivery Date</span>
+                                <span class="badge badge-success">05.11.2020</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="prefix">Quantity</span>
+                                <span class="badge badge-success">2</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="prefix">Price</span>
+                                <span class="badge badge-success">$ 11</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="prefix">Payment Method</span>
+                                <span class="badge badge-success">Debit Card</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="prefix">Main Transportation</span>
+                                <span class="badge badge-success">By Ship</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="prefix">Origin Country</span>
+                                <img src="loginAssests/hk.svg" style="height: 30px; padding-right: 10px;" /><span
+                                    class="badge badge-success">HongKong</span>
+                            </li>
+                        </ul>
+                        <br><br><br><br>
+                        <div class="order-status">
+
+                            <div class="order-status-timeline">
+                                <!-- class names: c0 c1 c2 c3 and c4 -->
+                                <div class="order-status-timeline-completion c1"></div>
+                            </div>
+                            <div class="image-order-status image-order-status-new active img-circle">
+                                <span class="status">Accepted</span>
+                                <div class="icon"></div>
+                            </div>
+                            <div class="image-order-status image-order-status-active active img-circle">
+                                <span class="status">In progress</span>
+                                <div class="icon"></div>
+                            </div>
+                            <div class="image-order-status image-order-status-intransit active img-circle">
+                                <span class="status">Shipped</span>
+                                <div class="icon"></div>
+                            </div>
+                            <div class="image-order-status image-order-status-delivered active img-circle">
+                                <span class="status">Delivered</span>
+                                <div class="icon"></div>
+                            </div>
+                            <div class="image-order-status image-order-status-completed active img-circle">
+                                <span class="status">Completed</span>
+                                <div class="icon"></div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div id="myModal3" class="modal">
+        <div class="modal-content">
+            <div class="row shop-tracking-status">
+                <div class="col-md-12">
+                    <div class="well">
+                        <span class="close3"
+                            style="cursor: pointer;  margin-left: 777px; font-size: 30px; margin-top: -20px;"></span>
+                        <img src="loginAssests/balloons.jpg" style="height: 300px; width: 300px; float: left;" />
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <span class="prefix">Reference No</span>
+                                <span class="badge badge-success">6865</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="prefix">Product Name</span>
+                                <span class="badge badge-success">Multicolored Balloons</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="prefix">Ordered Date</span>
+                                <span class="badge badge-success">14.09.2020</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="prefix">Delivered Date</span>
+                                <span class="badge badge-success">Unknown</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="prefix">Expected Delivery Date</span>
+                                <span class="badge badge-success">09.10.2020</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="prefix">Quantity</span>
+                                <span class="badge badge-success">6</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="prefix">Price</span>
+                                <span class="badge badge-success">$ 8.60</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="prefix">Payment Method</span>
+                                <span class="badge badge-success">Cash</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="prefix">Main Transportation</span>
+                                <span class="badge badge-success">By Plane</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="prefix">Origin Country</span>
+                                <img src="loginAssests/cn.svg" style="height: 30px; padding-right: 10px;" /><span
+                                    class="badge badge-success">China</span>
+                            </li>
+                        </ul>
+                        <br><br><br><br>
+                        <div class="order-status">
+
+                            <div class="order-status-timeline">
+                                <!-- class names: c0 c1 c2 c3 and c4 -->
+                                <div class="order-status-timeline-completion c2"></div>
+                            </div>
+                            <div class="image-order-status image-order-status-new active img-circle">
+                                <span class="status">Accepted</span>
+                                <div class="icon"></div>
+                            </div>
+                            <div class="image-order-status image-order-status-active active img-circle">
+                                <span class="status">In progress</span>
+                                <div class="icon"></div>
+                            </div>
+                            <div class="image-order-status image-order-status-intransit active img-circle">
+                                <span class="status">Shipped</span>
+                                <div class="icon"></div>
+                            </div>
+                            <div class="image-order-status image-order-status-delivered active img-circle">
+                                <span class="status">Delivered</span>
+                                <div class="icon"></div>
+                            </div>
+                            <div class="image-order-status image-order-status-completed active img-circle">
+                                <span class="status">Completed</span>
+                                <div class="icon"></div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div id="myModal4" class="modal">
+        <div class="modal-content">
+            <div class="row shop-tracking-status">
+                <div class="col-md-12">
+                    <div class="well">
+                        <span class="close4"
+                            style="cursor: pointer; margin-left: 777px; font-size: 30px; margin-top: -20px;"></span>
+                        <img src="loginAssests/sparkle.jpg" style="height: 300px; width: 300px; float: left;" />
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <span class="prefix">Reference No</span>
+                                <span class="badge badge-success">4128</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="prefix">Product Name</span>
+                                <span class="badge badge-success">Pink Glitter</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="prefix">Ordered Date</span>
+                                <span class="badge badge-success">02.09.2020</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="prefix">Delivered Date</span>
+                                <span class="badge badge-success">17.09.2020</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="prefix">Expected Delivery Date</span>
+                                <span class="badge badge-success">19.09.2020</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="prefix">Quantity</span>
+                                <span class="badge badge-success">5</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="prefix">Price</span>
+                                <span class="badge badge-success">$ 5.90</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="prefix">Payment Method</span>
+                                <span class="badge badge-success">Credit Card</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="prefix">Main Transportation</span>
+                                <span class="badge badge-success">By Ship</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="prefix">Origin Country</span>
+                                <img src="loginAssests/cn.svg" style="height: 30px; padding-right: 10px;" /><span
+                                    class="badge badge-success"> China</span>
+                            </li>
+                        </ul>
+                        <br><br><br><br>
+                        <div class="order-status">
+
+                            <div class="order-status-timeline">
+                                <!-- class names: c0 c1 c2 c3 and c4 -->
+                                <div class="order-status-timeline-completion c3"></div>
+                            </div>
+                            <div class="image-order-status image-order-status-new active img-circle">
+                                <span class="status">Accepted</span>
+                                <div class="icon"></div>
+                            </div>
+                            <div class="image-order-status image-order-status-active active img-circle">
+                                <span class="status">In progress</span>
+                                <div class="icon"></div>
+                            </div>
+                            <div class="image-order-status image-order-status-intransit active img-circle">
+                                <span class="status">Shipped</span>
+                                <div class="icon"></div>
+                            </div>
+                            <div class="image-order-status image-order-status-delivered active img-circle">
+                                <span class="status">Delivered</span>
+                                <div class="icon"></div>
+                            </div>
+                            <div class="image-order-status image-order-status-completed active img-circle">
+                                <span class="status">Completed</span>
+                                <div class="icon"></div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div id="myModal5" class="modal">
+        <div class="modal-content">
+            <div class="row shop-tracking-status">
+                <div class="col-md-12">
+                    <div class="well">
+                        <span class="close5"
+                            style="cursor: pointer; margin-left: 777px; font-size: 30px; margin-top: -20px;"></span>
+                        <img src="loginAssests/facemask.jpg" style="height: 250px; width: 300px; float: left;" />
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <span class="prefix">Reference No</span>
+                                <span class="badge badge-success">8733</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="prefix">Product Name</span>
+                                <span class="badge badge-success">Fancy Face Mask<< /span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="prefix">Ordered Date</span>
+                                <span class="badge badge-success">20.08.2020</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="prefix">Delivered Date</span>
+                                <span class="badge badge-success">01.09.2020</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="prefix">Expected Delivery Date</span>
+                                <span class="badge badge-success">27.08.2020</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="prefix">Quantity</span>
+                                <span class="badge badge-success">1</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="prefix">Price</span>
+                                <span class="badge badge-success">$ 15</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="prefix">Payment Method</span>
+                                <span class="badge badge-success">Debit Card</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="prefix">Main Transportation</span>
+                                <span class="badge badge-success">By Plane</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="prefix">Origin Country</span>
+                                <img src="loginAssests/kr.svg" style="height: 30px; padding-right: 10px;" /><span
+                                    class="badge badge-success">South Korea</span>
+                            </li>
+                        </ul>
+                        <br><br><br><br>
+                        <div class="order-status">
+
+                            <div class="order-status-timeline">
+                                <!-- class names: c0 c1 c2 c3 and c4 -->
+                                <div class="order-status-timeline-completion c4"></div>
+                            </div>
+                            <div class="image-order-status image-order-status-new active img-circle">
+                                <span class="status">Accepted</span>
+                                <div class="icon"></div>
+                            </div>
+                            <div class="image-order-status image-order-status-active active img-circle">
+                                <span class="status">In progress</span>
+                                <div class="icon"></div>
+                            </div>
+                            <div class="image-order-status image-order-status-intransit active img-circle">
+                                <span class="status">Shipped</span>
+                                <div class="icon"></div>
+                            </div>
+                            <div class="image-order-status image-order-status-delivered active img-circle">
+                                <span class="status">Delivered</span>
+                                <div class="icon"></div>
+                            </div>
+                            <div class="image-order-status image-order-status-completed active img-circle">
+                                <span class="status">Completed</span>
+                                <div class="icon"></div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div id="myModal6" class="modal">
+        <div class="modal-content">
+            <div class="row shop-tracking-status">
+                <div class="col-md-12">
+                    <div class="well">
+                        <span class="close6"
+                            style="cursor: pointer; margin-left: 777px; font-size: 30px; margin-top: -20px;"></span>
+                        <img src="loginAssests/mask.jpg" style="height: 300px; width: 300px; float: left;" />
+                        <ul class="list-group flush">
+                            <li class="list-group-item">
+                                <span class="prefix">Reference No</span>
+                                <span class="badge badge-success">7624</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="prefix">Product Name</span>
+                                <span class="badge badge-success">Pink Face Masquerade</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="prefix">Ordered Date</span>
+                                <span class="badge badge-success">10.08.2020</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="prefix">Delivered Date</span>
+                                <span class="badge badge-success">21.08.2020</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="prefix">Expected Delivery Date</span>
+                                <span class="badge badge-success">24.08.2020</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="prefix">Quantity</span>
+                                <span class="badge badge-success">2</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="prefix">Price</span>
+                                <span class="badge badge-success">$ 20</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="prefix">Payment Method</span>
+                                <span class="badge badge-success">Cash</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="prefix">Main Transportation</span>
+                                <span class="badge badge-success">By Plane</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="prefix">Origin Country</span>
+                                <img src="loginAssests/jp.svg"
+                                    style="height: 30px; padding-right: 10px; border: 9px;" /><span
+                                    class="badge badge-success">Japan</span>
+                            </li>
+                        </ul>
+                        <br><br><br><br>
+                        <div class="order-status">
+
+                            <div class="order-status-timeline">
+                                <!-- class names: c0 c1 c2 c3 and c4 -->
+                                <div class="order-status-timeline-completion c4"></div>
+                            </div>
+                            <div class="image-order-status image-order-status-new active img-circle">
+                                <span class="status">Accepted</span>
+                                <div class="icon"></div>
+                            </div>
+                            <div class="image-order-status image-order-status-active active img-circle">
+                                <span class="status">In progress</span>
+                                <div class="icon"></div>
+                            </div>
+                            <div class="image-order-status image-order-status-intransit active img-circle">
+                                <span class="status">Shipped</span>
+                                <div class="icon"></div>
+                            </div>
+                            <div class="image-order-status image-order-status-delivered active img-circle">
+                                <span class="status">Delivered</span>
+                                <div class="icon"></div>
+                            </div>
+                            <div class="image-order-status image-order-status-completed active img-circle">
+                                <span class="status">Completed</span>
+                                <div class="icon"></div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <nav class="sidebar show">
+            <div class="text">
+                <div class="wrapper2" style="margin-top: 4%; margin-bottom: 4%; margin-left: 4%; margin-right: 4%;">
+                    <div class="box">
+                        <div class="js--image-preview">
+                            <img id="js--image-preview" />
+                        </div>
+
+
+                        <div class="upload-options">
+                            <label><i class="fas fa-add mr-2"></i>
+                                <input type="file" class="image-upload" accept="image/*" />
+                            </label>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div><br>
+            <ul id="myTab2" style="margin-top: 90px;">
+                <li class="dashboard"><a href="dashboard.html" style="text-decoration: none;"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                </li>
+
+                <li class="wish"><a href="wishlist.html" style="text-decoration: none;"><i class="fa fa-fw fa-heart"></i> Wishlist</a></li>
+
+                <li class="orders"><a href="#orders" aria-controls="orders" aria-selected="false" style="text-decoration: none;">
+                        <i class="fa fa-fw fa-shopping-cart"></i> Orders</a></li>
+
+                <li><a href="shoplist.html" style="text-decoration: none;"><i class="fa fa-fw fa-list"></i> Shoplist</a></li>
+
+                <li><a href="buyingcalendar.html" style="text-decoration: none;"><i class="fa fa-fw fa-calendar"></i> Planner</a></li>
+
+                <li><a style="color: white;" id="logout" onclick="logout()" style="text-decoration: none;"><i class="fa fa-fw fa-sign-out"></i>
+                        Logout</a></li>
+            </ul>
+            <div class="btn1 click waves-effect">
+                <span class="fas fa-bars"></span>
+            </div>
+        </nav><br><br>
+        <div id="content">
+            <div class="sticky">
+                <section class="jumbotron text-center">
+                    <div class="container">
+                        <h1 class="jumbotron-heading">MY ORDER SUMMARY</h1>
+                    </div>
+                </section>
+            </div>
+            <div class="container mb-4">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th scope="col" class="text-center" style="font-weight: bold;">No</th>
+                                        <th scope="col" class="text-center" style="font-weight: bold;">Product</th>
+                                        <th scope="col" class="text-center" style="font-weight: bold;">Name</th>
+                                        <th scope="col" class="text-center" style="font-weight: bold;">Quantity</th>
+                                        <th scope="col" class="text-center" style="font-weight: bold;">Price</th>
+                                        <th scope="col" class="text-center" style="font-weight: bold;">Status</th>
+                                        <th> </th>
+                                    </tr>
+                                </thead>
+                                <tbody style="cursor: pointer;">
+                                    <tr class="tr1">
+                                        <td class="text-center">1243</td>
+                                        <td><img src="loginAssests/Green_glowstick.jpg" style="height: 100px;" /></td>
+                                        <td class="text-center">Fluorescent Green Band</td>
+                                        <td class="text-center">5</td>
+                                        <td class="text-center">$ 12.50</td>
+                                        <td class="text-center">In Progress</td>
+                                        <td class="text-right"><button class="btn btn-sm btn-warning"><i
+                                                    class="fa fa-spinner fa-plus" style="font-size: medium;"></i>
+                                            </button> </td>
+                                    </tr>
+                                    <tr class="tr2">
+                                        <td class="text-center">3464</td>
+                                        <td><img src="loginAssests/fairy.jpg" style="height: 100px;" /> </td>
+                                        <td class="text-center">Fairy Crown</td>
+                                        <td class="text-center">2</td>
+                                        <td class="text-center">$ 11</td>
+                                        <td class="text-center">In Progress</td>
+                                        <td class="text-right"><button class="btn btn-sm btn-warning"><i
+                                                    class="fa fa-spinner fa-plus" style="font-size: medium;"></i>
+                                            </button> </td>
+                                    </tr>
+                                    <tr class="tr3">
+                                        <td class="text-center">6865</td>
+                                        <td><img src="loginAssests/balloons.jpg" style="height: 100px;" /> </td>
+                                        <td class="text-center">Multicolored Balloons</td>
+                                        <td class="text-center">10</td>
+                                        <td class="text-center">$ 8.60</td>
+                                        <td class="text-center">Shipped</td>
+                                        <td class="text-right"><button class="btn btn-sm btn-info"><i
+                                                    class="fa fa-truck" style="font-size: medium;"></i> </button> </td>
+                                    </tr>
+                                    <tr class="tr4">
+                                        <td class="text-center">4128</td>
+                                        <td><img src="loginAssests/sparkle.jpg" style="height: 100px;" /> </td>
+                                        <td class="text-center">Pink Glitter</td>
+                                        <td class="text-center">5</td>
+                                        <td class="text-center">$ 5.90</td>
+                                        <td class="text-center">Delivered</td>
+                                        <td class="text-right"><button class="btn btn-sm btn-secondary"><i
+                                                    class="fa fa-gift" style="font-size: medium;"></i> </button> </td>
+                                    </tr>
+                                    <tr class="tr5">
+                                        <td class="text-center">8733</td>
+                                        <td><img src="loginAssests/facemask.jpg" style="height: 100px;" /> </td>
+                                        <td class="text-center">Fancy Face Mask</td>
+                                        <td class="text-center">1</td>
+                                        <td class="text-center">$ 15</td>
+                                        <td class="text-center">Completed</td>
+                                        <td class="text-right"><button class="btn btn-sm btn-success"><i
+                                                    class="fa fa-check" style="font-size: medium;"></i> </button> </td>
+                                    </tr>
+                                    <tr class="tr6">
+                                        <td class="text-center">7624</td>
+                                        <td><img src="loginAssests/mask.jpg" style="height: 100px;" /> </td>
+                                        <td class="text-center">Pink Face Masquerade</td>
+                                        <td class="text-center">2</td>
+                                        <td class="text-center">$ 20</td>
+                                        <td class="text-center">Completed</td>
+                                        <td class="text-right"><button class="btn btn-sm btn-success"><i
+                                                    class="fa fa-check" style="font-size: medium;"></i> </button> </td>
+                                    </tr>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <audio id="audio5" src="loginAssests/logout.mp3" autoplay="false"></audio>
+    <script>
+        function logout() {
+            swal({
+                title: "Are you sure you want to logout?",
+                text: "It is better to be logged in and shop!",
+                icon: "warning",
+                buttons: ["No", "Yes, I'm Sure"],
+                dangerMode: true,
+            })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        var sound6 = document.getElementById("audio5");
+                        sound6.playbackRate = 3;
+                        sound6.play();
+                        swal("You have logged out successfully", {
+                            icon: "success",
+                        });
+                        setTimeout(function () {
+                            window.location.replace("loginregister.html");
+                        }, 2000);
+                    } else {
+                        window.location.replace("dashboard.html");
+                    }
+                });
+        }
+        $('nav ul li').click(function () {
+            $(this).addClass("active").siblings().removeClass("active");
+        });
+        $('.btn1').click(function () {
+            $(this).toggleClass("click");
+            $('.sidebar').toggleClass("show");
+            $('.orders').addClass("active");
+
+        });
+
+        $(document).ready(function () {
+            $('.orders').addClass("active");
+            $('.pass_show').append('<span class="ptxt">Show</span>');
+
+
+            $(document).on('change', '.image-upload :file', function () {
+                var input = $(this),
+                    label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+                input.trigger('fileselect', [label]);
+            });
+
+            $('.image-upload :file').on('fileselect', function (event, label) {
+
+                var input = $(this).parents('.upload-options').find(':text'),
+                    log = label;
+
+            });
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $('#js--image-preview').attr('src', e.target.result);
+                    }
+
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+
+            $(".image-upload").change(function () {
+                readURL(this);
+            });
+
+        });
+
+        $(document).on('click', '.pass_show .ptxt', function () {
+            $(this).text($(this).text() == "Show" ? "Hide" : "Show");
+            $(this).prev().attr('type', function (index, attr) { return attr == 'password' ? 'text' : 'password'; });
+        });
+
+        $(function () {
+            var add = $('#add');
+            var listContainer = $('#list');
+            add.on('click', function () {
+                event.preventDefault();
+                inputValue = $('#input').val();
+                listContainer.prepend('<li> ' + inputValue + '</li>');
+                $('#input').val('');
+            });
+        });
+        var modal1 = document.getElementById("myModal1");
+        var span1 = document.getElementsByClassName("close1")[0];
+        var modal2 = document.getElementById("myModal2");
+        var span2 = document.getElementsByClassName("close2")[0];
+        var modal3 = document.getElementById("myModal3");
+        var span3 = document.getElementsByClassName("close3")[0];
+        var modal4 = document.getElementById("myModal4");
+        var span4 = document.getElementsByClassName("close4")[0];
+        var modal5 = document.getElementById("myModal5");
+        var span5 = document.getElementsByClassName("close5")[0];
+        var modal6 = document.getElementById("myModal6");
+        var span6 = document.getElementsByClassName("close6")[0];
+
+        $('.tr1').click(function () {
+            modal1.style.display = "block";
+        });
+        span1.onclick = function () {
+            modal1.style.display = "none";
+        }
+        window.addEventListener("click", function (event) {
+            if (event.target == modal1) {
+                modal1.style.display = "none";
+            }
+        });
+
+
+        $('.tr2').click(function () {
+            modal2.style.display = "block";
+        });
+        span2.onclick = function () {
+            modal2.style.display = "none";
+        }
+        window.addEventListener("click", function (event) {
+            if (event.target == modal2) {
+                modal2.style.display = "none";
+            }
+        });
+
+        $('.tr3').click(function () {
+            modal3.style.display = "block";
+        });
+        span3.onclick = function () {
+            var modal = document.getElementById("myModal");
+            modal3.style.display = "none";
+        }
+        window.addEventListener("click", function (event) {
+            if (event.target == modal3) {
+                modal3.style.display = "none";
+            }
+        });
+
+        $('.tr4').click(function () {
+            modal4.style.display = "block";
+        });
+        span4.onclick = function () {
+            var modal = document.getElementById("myModal");
+            modal4.style.display = "none";
+        }
+        window.addEventListener("click", function (event) {
+            if (event.target == modal4) {
+                modal4.style.display = "none";
+            }
+        });
+
+        $('.tr5').click(function () {
+            modal5.style.display = "block";
+        });
+        span5.onclick = function () {
+            var modal = document.getElementById("myModal");
+            modal5.style.display = "none";
+        }
+        window.addEventListener("click", function (event) {
+            if (event.target == modal5) {
+                modal5.style.display = "none";
+            }
+        });
+
+        $('.tr6').click(function () {
+            modal6.style.display = "block";
+        });
+        span6.onclick = function () {
+            var modal = document.getElementById("myModal");
+            modal6.style.display = "none";
+        }
+        window.addEventListener("click", function (event) {
+            if (event.target == modal6) {
+                modal6.style.display = "none";
+            }
+        });
+    </script>
+</body>
+
+</html>
