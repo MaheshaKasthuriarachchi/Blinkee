@@ -1,0 +1,107 @@
+*{
+  font-family: sans-serif;
+}
+
+
+.panel-group .panel {
+  border-radius: 0;
+  margin-bottom: 19px;
+  box-shadow: none;
+  border-color: #EEEEEE;
+}
+
+.panel-default > .panel-heading {
+  padding: 0px;
+  border-radius: 0;
+  color: #212121;
+  background-color: #d82323;
+  border-color: #EEEEEE;
+}
+
+.panel-title {
+  font-size: 14px;
+}
+
+.panel-title > a {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+}
+
+.more-less {
+  float: right;
+  color: #212121;
+}
+
+.panel-default > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #EEEEEE;
+}
+
+.demo {
+  padding-top: 50px;
+  padding-bottom: 60px;
+}
+
+.heading{
+  color: rgb(111, 21, 196);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: -250px;
+  font-weight: bold;
+}
+
+.img {
+ float:left; 
+ height:200px;
+ width:150px; 
+ position: static;
+ margin-top: -172px;
+ } 
+ @media only screen and (max-width: 780px) {
+  .img{
+    display: none;
+  }
+  #display{
+    display: none;
+  }
+}
+
+ .container1 {
+  width:100%;
+  height:auto;
+  padding-left:25px;
+  padding-bottom: 46px;
+  padding-top: 166px;
+  margin-bottom: -150px;
+  background-color: lightgray;
+}
+.descrip{
+  padding-top: 153px;
+  margin-bottom: -60px;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 10px;
+}
+.panel-body{
+  text-align: justify;
+}
+div#headingOne.panel-heading:hover, div#headingTwo.panel-heading:hover,div#headingThree.panel-heading:hover,
+div#headingFour.panel-heading:hover,div#headingFive.panel-heading:hover,div#headingSix.panel-heading:hover,
+div#headingSeven.panel-heading:hover, div#headingEight.panel-heading:hover, div#headingNine.panel-heading:hover,
+div#headingTen.panel-heading:hover, div#headingEleven.panel-heading:hover, div#headingTwelve.panel-heading:hover,
+div#headingThirteen.panel-heading:hover, div#headingFourteen.panel-heading:hover,
+div#headingFifteen.panel-heading:hover, div#headingSixteen.panel-heading:hover, div#headingSeventeen.panel-heading:hover,
+div#headingEighteen.panel-heading:hover, div#headingNineteen.panel-heading:hover, div#headingTwenty.panel-heading:hover{
+background-color: lightgray !important;
+}
+a{
+  text-decoration: none !important;
+}
+
+div.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  height: 200px;
+  background-color: white;
+  z-index: 100;
+}

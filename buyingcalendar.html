@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Account Planner</title>
+    <link rel="icon" href="loginAssests/image.jpg" type="image/jpg">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+    <link rel="stylesheet" href="loginregistercss/shoplist.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="loginregistercss/mobiscroll.javascript.min.css">
+    <script src="loginregisterjs/mobiscroll.javascript.min.js"></script>
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        body,
+        html {
+            height: 100%;
+        }
+
+        .md-add-event-demo {
+            position: absolute;
+            height: 100%;
+        }
+
+        .md-add-event-demo .mbsc-row {
+            height: 100%;
+        }
+
+        .md-add-event-demo .md-col-right {
+            overflow: auto;
+            height: 100%;
+            border-left: 1px solid #ccc;
+        }
+
+        .md-add-event-demo .md-delete-btn {
+            margin: 0;
+            position: absolute;
+            right: 10px;
+            top: 8px;
+            z-index: 1;
+            transition: background-color .3s ease-out;
+        }
+
+        .mbsc-material .md-add-event-demo .md-delete-btn {
+            top: 6px;
+        }
+
+        .mbsc-windows .md-add-event-demo .md-delete-btn {
+            top: 10px;
+        }
+
+        .md-add-event-demo .md-delete-btn.mbsc-btn-outline.mbsc-btn:not(:disabled):not(.mbsc-active):hover:hover {
+            background: #f5504e;
+            color: #fff;
+        }
+
+        .mbsc-rtl .md-add-event-demo .md-delete-btn {
+            right: auto;
+            left: 10px;
+        }
+
+        .md-add-event-popup {
+            max-width: 400px;
+        }
+
+        .mbsc-row {
+            margin-right: -15em;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <nav class="sidebar show">
+            <div class="text">
+                <div class="wrapper2" style="margin-top: 4%; margin-bottom: 4%; margin-left: 4%; margin-right: 4%;">
+                    <div class="box">
+                        <div class="js--image-preview">
+                            <img id="js--image-preview" />
+                        </div>
+
+
+                        <div class="upload-options">
+                            <label><i class="fas fa-add mr-2"></i>
+                                <input type="file" class="image-upload" accept="image/*" />
+                            </label>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <br>
+            <ul id="myTab2" style="margin-top: 90px;">
+                <li class="dashboard"><a href="dashboard.html" style="text-decoration: none;"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                </li>
+
+                <li class="wish"><a href="wishlist.html" style="text-decoration: none;"><i class="fa fa-fw fa-heart"></i> Wishlist</a></li>
+
+                <li class="orders"><a href="orders.html" style="text-decoration: none;"><i class="fa fa-fw fa-shopping-cart"></i> Orders</a></li>
+
+                <li class="shoplist"><a href="shoplist.html" style="text-decoration: none;"><i class="fa fa-fw fa-list"></i> Shoplist</a></li>
+                <li class="planner"><a href="#planner" aria-controls="planner" aria-selected="false" style="text-decoration: none;"><i
+                            class="fa fa-fw fa-calendar" style="text-decoration: none;"></i> Planner</a></li>
+
+                <li><a style="color: white;" id="logout" onclick="logout()" style="text-decoration: none;"><i class="fa fa-fw fa-sign-out"></i>
+                        Logout</a></li>
+            </ul>
+            <div class="btn1 click waves-effect">
+                <span class="fas fa-bars"></span>
+            </div>
+        </nav><br><br>
+        <div id="content">
+            <div class="sticky">
+                <section class="jumbotron text-center">
+                    <div class="container">
+                        <h1 class="jumbotron-heading">MY SHOPPING PLANNER</h1>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <div mbsc-page class="demo-add-delete-event"
+            style="margin-left: 300px; margin-top: 16%; position: absolute; width: 59%; border-width: 5px;">
+            <div style="height:100%">
+                <div mbsc-form>
+                    <div class="mbsc-grid md-add-event-demo">
+                        <div class="mbsc-row mbsc-no-padding">
+                            <div class="mbsc-col-md-4 mbsc-col-12">
+                                <div id="demo-add-event-month" style="width: 100%; margin-right: 10%;"></div>
+                                <div class="mbsc-btn-group-block">
+                                    <button mbsc-button id="showAddEventPopup"><strong>Add New Shopping
+                                            Event</strong></button>
+                                </div>
+                            </div>
+                            <div class="mbsc-col-md-8 mbsc-col-12 md-col-right"
+                                style="margin-left: 2px;max-width: 45.777778%;">
+                                <div id="demo-add-event-day" style="margin-right: 1%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="demo-add-event-popup" class="md-add-event-popup">
+                    <div mbsc-form>
+                        <div class="mbsc-form-group">
+                            <label>
+                                Title
+                                <input mbsc-input id="eventText">
+                            </label>
+                        </div>
+                        <div class="mbsc-form-group">
+                            <label for="allDay">
+                                All-day
+                                <input mbsc-switch id="allDay" type="checkbox">
+                            </label>
+                            <label for="eventDate">
+                                Starts
+                                <input mbsc-input id="eventDate">
+                            </label>
+                            <label>
+                                Ends
+                                <input mbsc-input id="endInput">
+                            </label>
+                            <label>
+                                Show as busy
+                                <input mbsc-segmented type="radio" name="free" value="false" checked>
+                            </label>
+                            <label>
+                                Show as free
+                                <input mbsc-segmented type="radio" name="free" value="true">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <audio id="audio2" src="loginAssests/mouseclick.mp3" autoplay="false"></audio>
+        <audio id="audio3" src="loginAssests/trash.mp3" autoplay="false"></audio>
+        <audio id="audio5" src="loginAssests/logout.mp3" autoplay="false"></audio>
+        <script>
+            mobiscroll.settings = {
+                lang: 'en',                              // Specify language like: lang: 'pl' or omit setting to use default
+                theme: 'ios',                            // Specify theme like: theme: 'ios' or omit setting to use default
+                themeVariant: 'dark'                    // More info about themeVariant: https://docs.mobiscroll.com/4-10-7/javascript/eventcalendar#opt-themeVariant
+            };
+
+            var monthInst,
+                dayInst,
+                popupInst,
+                dateInst,
+                preventSet,
+                allDaySwitch = document.getElementById('allDay'),
+                eventTextInput = document.getElementById('eventText'),
+                eventDescInput = document.getElementById('eventDesc'),
+                now = new Date(),
+                btn = '<button class="mbsc-btn mbsc-btn-outline mbsc-btn-danger md-delete-btn mbsc-ios">Delete</button>',
+                myData = [];
+
+            function navigate(inst, val) {
+                if (inst) {
+                    inst.navigate(val);
+                }
+            }
+
+            dateInst = mobiscroll.range('#eventDate', {
+                controls: ['date', 'time'],
+                dateWheels: '|D M d|',
+                endInput: '#endInput',
+                tabs: false,
+                responsive: {                            // More info about responsive: https://docs.mobiscroll.com/4-10-7/javascript/eventcalendar#opt-responsive
+                    large: {
+                        touchUi: false
+                    }
+                },
+                cssClass: 'md-add-event-range'
+            });
+
+            dayInst = mobiscroll.eventcalendar('#demo-add-event-day', {
+                display: 'inline',                       // Specify display mode like: display: 'bottom' or omit setting to use default
+                view: {                                  // More info about view: https://docs.mobiscroll.com/4-10-7/javascript/eventcalendar#opt-view
+                    eventList: { type: 'day' }
+                },
+                data: myData,                            // More info about data: https://docs.mobiscroll.com/4-10-7/javascript/eventcalendar#opt-data
+                onPageChange: function (event, inst) {   // More info about onPageChange: https://docs.mobiscroll.com/4-10-7/javascript/eventcalendar#event-onPageChange
+                    var day = event.firstDay;
+                    preventSet = true;
+                    navigate(monthInst, day);
+                    dateInst.setVal([day, new Date(day.getFullYear(), day.getMonth(), day.getDate(), day.getHours() + 2)], true);
+                },
+                onEventSelect: function (event, inst) {  // More info about onEventSelect: https://docs.mobiscroll.com/4-10-7/javascript/eventcalendar#event-onEventSelect
+                    if (event.domEvent.target.classList.contains('md-delete-btn')) {
+                        mobiscroll.confirm({
+
+                            title: 'Confirm Deletion',
+                            message: 'Are you sure you want to delete this plan?',
+                            okText: 'Delete',
+                            callback: function (res) {
+                                if (res) {
+                                    var sound3 = document.getElementById("audio3");
+                                    sound3.playbackRate = 3;
+                                    sound3.play();
+                                    inst.removeEvent([event.event._id]);
+                                    monthInst.removeEvent([event.event._id]);
+                                    mobiscroll.toast({
+
+                                        message: 'Deleted'
+                                    });
+                                }
+                            }
+                        });
+                    }
+                }
+            });
+
+            monthInst = mobiscroll.eventcalendar('#demo-add-event-month', {
+                display: 'inline',                       // Specify display mode like: display: 'bottom' or omit setting to use default
+                view: {                                  // More info about view: https://docs.mobiscroll.com/4-10-7/javascript/eventcalendar#opt-view
+                    calendar: { type: 'month' }
+                },
+                data: myData,                            // More info about data: https://docs.mobiscroll.com/4-10-7/javascript/eventcalendar#opt-data
+                onSetDate: function (event, inst) {      // More info about onSetDate: https://docs.mobiscroll.com/4-10-7/javascript/eventcalendar#event-onSetDate
+                    if (!preventSet) {
+                        var day = event.date;
+                        navigate(dayInst, day);
+                        dateInst.setVal([day, new Date(day.getFullYear(), day.getMonth(), day.getDate(), day.getHours() + 2)], true);
+                    }
+                    preventSet = false;
+                }
+            });
+
+            document
+                .getElementById('allDay')
+                .addEventListener('change', function () {
+                    var allDay = this.checked;
+
+                    dateInst.option({
+                        controls: allDay ? ['date'] : ['date', 'time'],
+                        dateWheels: (allDay ? 'MM dd yy' : '|D M d|')
+                    });
+                });
+
+            popupInst = mobiscroll.popup('#demo-add-event-popup', {
+                display: 'center',                       // Specify display mode like: display: 'bottom' or omit setting to use default
+                cssClass: 'mbsc-no-padding',
+                buttons: [{                              // More info about buttons: https://docs.mobiscroll.com/4-10-7/javascript/eventcalendar#opt-buttons
+                    text: 'Add Shopping Event',
+                    handler: 'set'
+                },
+                    'cancel'
+                ],
+                headerText: 'Add New Shopping Event',             // More info about headerText: https://docs.mobiscroll.com/4-10-7/javascript/eventcalendar#opt-headerText
+                onSet: function (event, inst) {
+                    var sound4 = document.getElementById("audio2");
+                    sound4.playbackRate = 3;
+                    sound4.play();
+                    var eventDates = dateInst.getVal(),
+                        events = {
+                            start: eventDates[0],
+                            end: eventDates[1],
+                            text: (eventTextInput.value || 'New Event') + btn,
+                            title: eventTextInput.value || 'New Event',
+                            allDay: allDaySwitch.checked,
+                            free: document.querySelector('input[name="free"]:checked').value == 'true'
+                        };
+                    monthInst.addEvent(events);
+                    dayInst.addEvent(events);
+                    eventTextInput.value = '';
+                    // Navigate the calendar to the new event's start date
+                    monthInst.navigate(eventDates[0], true);
+                }
+            });
+
+            document.getElementById('showAddEventPopup').addEventListener('click', function () {
+                var sound2 = document.getElementById("audio2");
+                sound2.playbackRate = 3;
+                sound2.play();
+                popupInst.show();
+            }, false);
+
+
+            function logout() {
+                swal({
+                    title: "Are you sure you want to logout?",
+                    text: "It is better to be logged in and shop!",
+                    icon: "warning",
+                    buttons: ["No", "Yes, I'm Sure"],
+                    dangerMode: true,
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            var sound6 = document.getElementById("audio5");
+                            sound6.playbackRate = 3;
+                            sound6.play();
+                            swal("You have logged out successfully", {
+                                icon: "success",
+                            });
+                            setTimeout(function () {
+                                window.location.replace("loginregister.html");
+                            }, 2000);
+                        } else {
+                            window.location.replace("dashboard.html");
+                        }
+                    });
+            }
+            $('nav ul li').click(function () {
+                $(this).addClass("active").siblings().removeClass("active");
+            });
+            $('.btn1').click(function () {
+                $(this).toggleClass("click");
+                $('.sidebar').toggleClass("show");
+                $('.planner').addClass("active");
+
+            });
+
+            $(document).ready(function () {
+                $('.planner').addClass("active");
+                $('.pass_show').append('<span class="ptxt">Show</span>');
+
+
+                $(document).on('change', '.image-upload :file', function () {
+                    var input = $(this),
+                        label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+                    input.trigger('fileselect', [label]);
+                });
+
+                $('.image-upload :file').on('fileselect', function (event, label) {
+
+                    var input = $(this).parents('.upload-options').find(':text'),
+                        log = label;
+
+                });
+                function readURL(input) {
+                    if (input.files && input.files[0]) {
+                        var reader = new FileReader();
+
+                        reader.onload = function (e) {
+                            $('#js--image-preview').attr('src', e.target.result);
+                        }
+
+                        reader.readAsDataURL(input.files[0]);
+                    }
+                }
+
+                $(".image-upload").change(function () {
+                    readURL(this);
+                });
+
+            });
+        </script>
+</body>
+
+</html>

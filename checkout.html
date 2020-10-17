@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- Basic -->
+<body style="background-color:rgb(224, 201, 173);"></body>
 
 <head>
     <meta charset="utf-8">
@@ -195,9 +196,11 @@
                             </div>
                             <div class="mb-3">
                                 <label for="username">Username *</label>
-                                <div class="input-group">
-                                    <input type="text" class="form-control" id="username" placeholder="" required>
-                                    <div class="invalid-feedback" style="width: 100%;"> Your username is required. </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="username" placeholder=""
+                                    required data-error="Please enter your email">
+                                    <div class="help-block with-errors"></div>
+                                
                                 </div>
                             </div>
                             <div class="mb-3">
